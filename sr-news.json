@@ -1,0 +1,13 @@
+---
+layout: none
+permalink: /sr-news.json
+---
+
+{% assign data = site.data.data.sr %}
+{% assign news_items = data.news | slice: 0, 10 %}
+
+{
+  "version": {{ data.version | jsonify }},
+  "timestamp": {{ data.timestamp | jsonify }},
+  "news": {{ news_items | jsonify }}
+}
